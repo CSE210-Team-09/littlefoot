@@ -2,44 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Littlefoot Example</title>
-  <link rel="stylesheet" href="/dist/littlefoot.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Littlefoot Example</title>
+    <link rel="stylesheet" href="node_modules\littlefoot\dist\littlefoot.css">
+    <!-- Include Littlefoot CSS -->
+    <style>
+        /* Custom styles (if any) */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .footnotes {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .footnote img {
+            width: 16px;
+            /* Adjust size as needed */
+            height: 16px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Littlefoot Example</h1>
+    <p>
+        Hi, we are a team of 7 people<sup id="fnref:1"><a href="#fn:1" class="footnote"></a></sup>.
+        We are trying to understand how the code works <sup id="fnref:2"><a href="#fn:2" class="footnote">[2]</a></sup>.
+    </p>
 
-  First Footnote <a href="#fn:1" id="fnref:1">1</a>
-
-  Second Footnote <a href="#fn:2" id="fnref:2">2</a>
-
-  <div class="footnotes">
-    <hr>
-    <ol>
-
-      <li class="footnote" id="fn:1">
-        <p>
-
-          This is what is in the first inline footnote bubble...
-
-        </p>
-      </li>
-
-      <li class="footnote" id="fn:2">
-        <p>
-
-          This is what is in the second inline footnote bubble...
-
-        </p>
-      </li>
-    </ol>
-  </div>
-  <script src="/dist/littlefoot.js"></script>
-  <script type="application/javascript">
-    littlefoot.littlefoot();  
-  </script>
+    <div class="footnotes">
+        <ol>
+            <li class="footnote" id="fn:1">
+                <p>This is the footnote trail 1. <a href="#fnref:1" class="reversefootnote">&#160;&#8617;</a></p>
+            </li>
+            <li class="footnote" id="fn:2">
+                <p>This is the footnote trail 2.<a href="#fnref:2" class="reversefootnote">&#160;&#8617;</a></p>
+            </li>
+        </ol>
+    </div>
+    <script src="/node_modules/littlefoot/dist/littlefoot.js"></script>
+    <script type="application/javascript">
+        littlefoot.littlefoot()
+    </script>
 </body>
 
 </html>
